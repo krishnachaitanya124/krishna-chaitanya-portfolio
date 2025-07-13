@@ -1,0 +1,110 @@
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
+
+export const Hero = () => {
+  return (
+    <section className="min-h-screen flex items-center justify-center gradient-subtle relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="space-y-8 text-center lg:text-left">
+            <div className="space-y-4">
+              <Badge variant="secondary" className="text-sm px-4 py-2">
+                Available for new opportunities
+              </Badge>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                Hi, I'm{" "}
+                <span className="gradient-primary bg-clip-text text-transparent">
+                  Krishna Chaitanya
+                </span>
+              </h1>
+              <h2 className="text-xl md:text-2xl text-muted-foreground">
+                Full Stack Developer & UI/UX Designer
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-xl">
+                Passionate about creating innovative web solutions with strong technical expertise 
+                in modern technologies and a keen eye for user experience design.
+              </p>
+            </div>
+            
+            {/* Contact buttons */}
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <Button 
+                size="lg" 
+                className="gradient-primary shadow-elegant transition-smooth hover:scale-105"
+                asChild
+              >
+                <a href="mailto:uppada1245@gmail.com">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Get In Touch
+                </a>
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="transition-smooth hover:scale-105"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download CV
+              </Button>
+            </div>
+
+            {/* Social links */}
+            <div className="flex gap-4 justify-center lg:justify-start">
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="transition-smooth hover:scale-110 hover:bg-primary/10"
+                asChild
+              >
+                <a href="https://linkedin.com/in/Uppada Krishna Chaitanya" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="transition-smooth hover:scale-110 hover:bg-primary/10"
+                asChild
+              >
+                <a href="https://github.com/krishnachaitanya124" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="transition-smooth hover:scale-110 hover:bg-primary/10"
+                asChild
+              >
+                <a href="tel:8247332482">
+                  <Phone className="h-5 w-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Profile Image */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="absolute inset-0 gradient-primary rounded-full blur-xl opacity-30 animate-glow"></div>
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-background shadow-elegant">
+                <img 
+                  src="/lovable-uploads/c046dce6-1a14-4e1b-bd58-839ffc5f3abe.png" 
+                  alt="Krishna Chaitanya Uppada"
+                  className="w-full h-full object-cover transition-smooth hover:scale-110"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

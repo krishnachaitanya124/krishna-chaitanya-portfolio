@@ -16,10 +16,6 @@ export const Hero = () => {
           {/* Content */}
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-6">
-              <Badge variant="outline" className="text-sm px-4 py-2 border-primary/20 bg-primary/5 text-primary">
-                <Star className="mr-2 h-3 w-3" />
-                Available for new opportunities
-              </Badge>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight text-foreground">
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">

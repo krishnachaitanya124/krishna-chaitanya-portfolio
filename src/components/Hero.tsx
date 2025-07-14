@@ -72,7 +72,7 @@ export const Hero = () => {
                 className="gradient-primary shadow-elegant transition-smooth hover:scale-105 animate-glow"
                 asChild
               >
-                <a href="mailto:uppada1245@gmail.com">
+                <a href="mailto:chaitanyauppada1245@gmail.com">
                   <Mail className="mr-2 h-5 w-5" />
                   Get In Touch
                 </a>
@@ -81,9 +81,12 @@ export const Hero = () => {
                 variant="outline" 
                 size="lg"
                 className="transition-smooth hover:scale-105 border-primary/20 hover:border-primary"
+                asChild
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
+                <a href="https://drive.google.com/file/d/1fkYSLbmOKXDG8r-Cl7DUVVqWvICc5SX3/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download CV
+                </a>
               </Button>
             </div>
 
@@ -95,7 +98,7 @@ export const Hero = () => {
                 className="transition-smooth hover:scale-110 hover:bg-primary/10 hover:text-primary"
                 asChild
               >
-                <a href="https://linkedin.com/in/Uppada Krishna Chaitanya" target="_blank" rel="noopener noreferrer">
+                <a href="https://linkedin.com/in/uppada-krishna-chaitanya-842517271" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
@@ -128,7 +131,7 @@ export const Hero = () => {
               <div className="absolute inset-0 gradient-primary rounded-full blur-xl opacity-30 animate-glow"></div>
               <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-background shadow-elegant hover:shadow-primary/20 transition-smooth">
                 <img 
-                  src="/lovable-uploads/c046dce6-1a14-4e1b-bd58-839ffc5f3abe.png" 
+                  src="/lovable-uploads/491572e3-dafb-4dfb-b81e-1ba24c148a06.png" 
                   alt="Krishna Chaitanya Uppada"
                   className="w-full h-full object-cover transition-smooth hover:scale-110"
                 />

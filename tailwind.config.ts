@@ -88,7 +88,19 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate'
+			},
+			keyframes: {
+				float: {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' }
+				},
+				glow: {
+					'from': { boxShadow: '0 0 20px hsl(var(--primary) / 0.5)' },
+					'to': { boxShadow: '0 0 30px hsl(var(--primary) / 0.8)' }
+				}
 			}
 		}
 	},

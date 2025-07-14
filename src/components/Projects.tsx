@@ -12,6 +12,7 @@ export const Projects = () => {
       date: "Dec 2024",
       category: "Web Development",
       status: "Completed",
+      github: "https://github.com/krishnachaitanya124/Ayush_Startups",
       features: [
         "User-friendly interface with digital forms",
         "Document upload functionality", 
@@ -26,6 +27,7 @@ export const Projects = () => {
       date: "Feb 2025",
       category: "Healthcare App",
       status: "Completed",
+      github: "https://github.com/krishnachaitanya124/Medicine-Remainder-and-Tracker",
       features: [
         "Medication schedule management",
         "Dosage and time tracking",
@@ -39,7 +41,8 @@ export const Projects = () => {
       technologies: ["React.js", "Node.js", "Express.js", "MySQL"],
       date: "Jan 2025 - Apr 2025",
       category: "Security System",
-      status: "In Progress",
+      status: "Completed",
+      github: "https://github.com/krishnachaitanya124/Gatepass_Frontend",
       features: [
         "Biometric fingerprint authentication",
         "Real-time pass issuance",
@@ -148,16 +151,12 @@ export const Projects = () => {
                     variant="outline" 
                     size="sm" 
                     className="flex-1 transition-smooth hover:scale-105"
+                    asChild
                   >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Button>
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    className="transition-smooth hover:scale-105"
-                  >
-                    <Github className="h-4 w-4" />
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      View Code
+                    </a>
                   </Button>
                 </div>
               </CardContent>

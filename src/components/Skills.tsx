@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Code, Palette, Database, Cloud, Award, Trophy } from "lucide-react";
 
@@ -51,11 +52,21 @@ export const Skills = () => {
     }
   ];
 
-  const certificates = [
-    "Object Oriented Programming in Java – Coursera",
-    "Python Essentials 1 – Cisco Networking Academy", 
-    "Smart India Hackathon Grand Finale, 2024 – Participation Certificate",
-    "Cloud Computing with AWS – HashTek Solutions"
+  const certifications = [
+    {
+      title: "Cloud Computing Intern Certificate",
+      issuer: "HashTek Solutions",
+      date: "2024",
+      verified: true,
+      link: "https://drive.google.com/file/d/1MiWrEAxi19BK7eN10RZc7PtdiG_b7hq1/view?usp=sharing"
+    },
+    {
+      title: "SIH Grand Finale 2024",
+      issuer: "Smart India Hackathon",
+      date: "2024",
+      verified: true,
+      link: "https://drive.google.com/file/d/1cXxKwc8wzcUNj7LUcjwTQ3luEs4zkOOm/view?usp=sharing"
+    }
   ];
 
   const achievements = [
@@ -168,12 +179,35 @@ export const Skills = () => {
                 <h3 className="text-xl font-bold">Certifications</h3>
               </div>
               
-              <div className="space-y-3">
-                {certificates.map((cert, index) => (
-                  <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-smooth">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-sm text-card-foreground">{cert}</span>
-                  </div>
+              <div className="space-y-4">
+                {certifications.map((cert, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow group">
+                    <CardContent className="p-4">
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Award className="h-4 w-4 text-primary" />
+                          <Badge variant={cert.verified ? "default" : "secondary"}>
+                            {cert.verified ? "Verified" : "In Progress"}
+                          </Badge>
+                        </div>
+                      </div>
+                      <h4 className="font-semibold mb-1">{cert.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-1">{cert.issuer}</p>
+                      <p className="text-xs text-muted-foreground mb-3">{cert.date}</p>
+                      {cert.link && (
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                          asChild
+                        >
+                          <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                            View Certificate
+                          </a>
+                        </Button>
+                      )}
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </CardContent>

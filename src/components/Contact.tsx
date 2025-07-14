@@ -10,8 +10,8 @@ export const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "uppada1245@gmail.com",
-      href: "mailto:uppada1245@gmail.com"
+      value: "chaitanyauppada1245@gmail.com",
+      href: "mailto:chaitanyauppada1245@gmail.com"
     },
     {
       icon: Phone, 
@@ -22,8 +22,8 @@ export const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn", 
-      value: "linkedin.com/in/Uppada Krishna Chaitanya",
-      href: "https://linkedin.com/in/Uppada Krishna Chaitanya"
+      value: "linkedin.com/in/uppada-krishna-chaitanya-842517271",
+      href: "https://linkedin.com/in/uppada-krishna-chaitanya-842517271"
     },
     {
       icon: Github,
@@ -98,7 +98,7 @@ export const Contact = () => {
                     className="gradient-primary shadow-elegant transition-smooth hover:scale-105"
                     asChild
                   >
-                    <a href="mailto:uppada1245@gmail.com">
+                    <a href="mailto:chaitanyauppada1245@gmail.com">
                       <Mail className="mr-2 h-4 w-4" />
                       Send Email
                     </a>
@@ -108,7 +108,7 @@ export const Contact = () => {
                     className="transition-smooth hover:scale-105"
                     asChild
                   >
-                    <a href="/lovable-uploads/1b7c1f0e-e869-48cf-a27e-653cd43a5c5e.png" download>
+                    <a href="https://drive.google.com/file/d/1fkYSLbmOKXDG8r-Cl7DUVVqWvICc5SX3/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                       Download Resume
                     </a>
                   </Button>

@@ -1,11 +1,76 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      // Since this is a frontend-only app, we'll create a mailto link with the form data
+      const subject = formData.subject || "Contact Form Submission";
+      const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+      const mailtoLink = `mailto:chaitanyauppada1245@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.open(mailtoLink, '_blank');
+      
+      toast({
+        title: "Message Prepared",
+        description: "Your email client will open with the message ready to send.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -121,27 +186,33 @@ export const Contact = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
                 
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
-                        Name
+                        Name *
                       </label>
                       <Input 
                         id="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
                         placeholder="Your name"
                         className="transition-smooth focus:ring-2 focus:ring-primary/20"
+                        required
                       />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium">
-                        Email
+                        Email *
                       </label>
                       <Input 
                         id="email"
                         type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
                         placeholder="your.email@example.com"
                         className="transition-smooth focus:ring-2 focus:ring-primary/20"
+                        required
                       />
                     </div>
                   </div>
@@ -152,6 +223,8 @@ export const Contact = () => {
                     </label>
                     <Input 
                       id="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
                       placeholder="Project collaboration, job opportunity, etc."
                       className="transition-smooth focus:ring-2 focus:ring-primary/20"
                     />
@@ -159,22 +232,26 @@ export const Contact = () => {
                   
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
-                      Message
+                      Message *
                     </label>
                     <Textarea 
                       id="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Tell me about your project or opportunity..."
                       rows={5}
                       className="transition-smooth focus:ring-2 focus:ring-primary/20"
+                      required
                     />
                   </div>
                   
                   <Button 
                     type="submit"
-                    className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-elegant transition-smooth hover:scale-105"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-elegant transition-smooth hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Send className="mr-2 h-4 w-4" />
-                    Send Message
+                    {isSubmitting ? "Preparing Message..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>

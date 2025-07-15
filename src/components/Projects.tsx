@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -64,7 +65,7 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 gradient-subtle">
+    <section id="projects" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
@@ -72,7 +73,7 @@ export const Projects = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Featured{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-primary">
               Projects
             </span>
           </h2>
@@ -92,8 +93,8 @@ export const Projects = () => {
                 {/* Project Header */}
                 <div className="space-y-3 mb-4">
                   <div className="flex items-start justify-between gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg group-hover:scale-110 transition-smooth">
-                      <Briefcase className="h-5 w-5 text-primary-foreground" />
+                    <div className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-lg group-hover:scale-110 transition-smooth">
+                      <Briefcase className="h-5 w-5 text-primary" />
                     </div>
                     <Badge className={`text-xs ${getStatusColor(project.status)}`}>
                       {project.status}
@@ -164,15 +165,18 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View All Projects Button */}
+        {/* View All Projects Button with GitHub Link */}
         <div className="text-center mt-12">
           <Button 
             variant="outline" 
             size="lg"
             className="transition-smooth hover:scale-105"
+            asChild
           >
-            <ExternalLink className="mr-2 h-5 w-5" />
-            View All Projects
+            <a href="https://github.com/krishnachaitanya124" target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="mr-2 h-5 w-5" />
+              View All Projects on GitHub
+            </a>
           </Button>
         </div>
       </div>

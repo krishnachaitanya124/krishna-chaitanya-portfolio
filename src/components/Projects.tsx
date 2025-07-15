@@ -72,7 +72,7 @@ export const Projects = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Featured{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
@@ -92,7 +92,7 @@ export const Projects = () => {
                 {/* Project Header */}
                 <div className="space-y-3 mb-4">
                   <div className="flex items-start justify-between gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 gradient-primary rounded-lg group-hover:scale-110 transition-smooth">
+                    <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg group-hover:scale-110 transition-smooth">
                       <Briefcase className="h-5 w-5 text-primary-foreground" />
                     </div>
                     <Badge className={`text-xs ${getStatusColor(project.status)}`}>

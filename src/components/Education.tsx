@@ -36,7 +36,7 @@ export const Education = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Academic{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Excellence
             </span>
           </h2>
@@ -59,7 +59,7 @@ export const Education = () => {
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div className="flex-1 space-y-2">
                       <div className="flex items-start gap-3">
-                        <div className="inline-flex items-center justify-center w-10 h-10 gradient-primary rounded-lg group-hover:scale-110 transition-smooth mt-1">
+                        <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg group-hover:scale-110 transition-smooth mt-1">
                           {edu.status === 'current' ? (
                             <GraduationCap className="h-5 w-5 text-primary-foreground" />
                           ) : (
@@ -104,19 +104,19 @@ export const Education = () => {
               <h3 className="text-2xl font-bold mb-6 text-center">Academic Highlights</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     9.0/10
                   </div>
                   <p className="text-sm text-muted-foreground">Current CGPA</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     96.6%
                   </div>
                   <p className="text-sm text-muted-foreground">Intermediate Marks</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     98.7%
                   </div>
                   <p className="text-sm text-muted-foreground">Secondary Education</p>

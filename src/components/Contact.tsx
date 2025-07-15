@@ -42,7 +42,7 @@ export const Contact = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Let's{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Connect
             </span>
           </h2>
@@ -75,7 +75,7 @@ export const Contact = () => {
                         rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                         className="flex items-center gap-4 transition-smooth hover:text-primary"
                       >
-                        <div className="inline-flex items-center justify-center w-12 h-12 gradient-primary rounded-lg group-hover:scale-110 transition-smooth">
+                        <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-lg group-hover:scale-110 transition-smooth">
                           <contact.icon className="h-5 w-5 text-primary-foreground" />
                         </div>
                         <div className="flex-1">
@@ -95,7 +95,7 @@ export const Contact = () => {
                 <h4 className="font-semibold">Quick Actions</h4>
                 <div className="flex flex-wrap gap-3">
                   <Button 
-                    className="gradient-primary shadow-elegant transition-smooth hover:scale-105"
+                    className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-elegant transition-smooth hover:scale-105"
                     asChild
                   >
                     <a href="mailto:chaitanyauppada1245@gmail.com">
@@ -171,7 +171,7 @@ export const Contact = () => {
                   
                   <Button 
                     type="submit"
-                    className="w-full gradient-primary shadow-elegant transition-smooth hover:scale-105"
+                    className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-elegant transition-smooth hover:scale-105"
                   >
                     <Send className="mr-2 h-4 w-4" />
                     Send Message

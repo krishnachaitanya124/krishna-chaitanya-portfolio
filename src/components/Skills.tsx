@@ -93,7 +93,7 @@ export const Skills = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Technical{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Proficiency
             </span>
           </h2>
@@ -112,7 +112,7 @@ export const Skills = () => {
             >
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="inline-flex items-center justify-center w-10 h-10 gradient-primary rounded-lg group-hover:scale-110 transition-smooth">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg group-hover:scale-110 transition-smooth">
                     <category.icon className="h-5 w-5 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-bold">{category.title}</h3>
@@ -140,7 +140,7 @@ export const Skills = () => {
           <Card className="shadow-soft border-border/50">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="inline-flex items-center justify-center w-10 h-10 gradient-primary rounded-lg">
+                <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg">
                   <Trophy className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <h3 className="text-xl font-bold">Achievements</h3>
@@ -173,7 +173,7 @@ export const Skills = () => {
           <Card className="shadow-soft border-border/50">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="inline-flex items-center justify-center w-10 h-10 gradient-primary rounded-lg">
+                <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg">
                   <Award className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <h3 className="text-xl font-bold">Certifications</h3>

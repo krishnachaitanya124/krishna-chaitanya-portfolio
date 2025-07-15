@@ -31,7 +31,7 @@ export const Experience = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Professional{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Journey
             </span>
           </h2>
@@ -53,7 +53,7 @@ export const Experience = () => {
                     {/* Header */}
                     <div className="space-y-2">
                       <div className="flex items-start gap-3">
-                        <div className="inline-flex items-center justify-center w-12 h-12 gradient-primary rounded-lg group-hover:scale-110 transition-smooth mt-1">
+                        <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-lg group-hover:scale-110 transition-smooth mt-1">
                           <Cloud className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <div className="flex-1">
@@ -140,7 +140,7 @@ export const Experience = () => {
               <h3 className="text-2xl font-bold mb-6 text-center">Cloud Technologies Expertise</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center space-y-3">
-                  <div className="inline-flex items-center justify-center w-16 h-16 gradient-primary rounded-full">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full">
                     <Server className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <h4 className="font-semibold">EC2 & Compute</h4>
@@ -149,7 +149,7 @@ export const Experience = () => {
                   </p>
                 </div>
                 <div className="text-center space-y-3">
-                  <div className="inline-flex items-center justify-center w-16 h-16 gradient-primary rounded-full">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full">
                     <Database className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <h4 className="font-semibold">S3 & Storage</h4>
@@ -158,7 +158,7 @@ export const Experience = () => {
                   </p>
                 </div>
                 <div className="text-center space-y-3">
-                  <div className="inline-flex items-center justify-center w-16 h-16 gradient-primary rounded-full">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full">
                     <Cloud className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <h4 className="font-semibold">Lambda & IAM</h4>

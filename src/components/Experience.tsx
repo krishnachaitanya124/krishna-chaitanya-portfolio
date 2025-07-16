@@ -122,9 +122,12 @@ export const Experience = () => {
                           variant="outline" 
                           size="sm"
                           className="transition-smooth hover:scale-105"
+                          asChild
                         >
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          View Certificate
+                          <a href="https://drive.google.com/file/d/1fkYSLbmOKXDG8r-Cl7DUVVqWvICc5SX3/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            View Certificate
+                          </a>
                         </Button>
                       </div>
                     )}

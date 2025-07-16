@@ -17,8 +17,8 @@ export const Hero = () => {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-6">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
-                Hi, I'm{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block sm:inline">
+                <span className="block">Hi, I'm</span>
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Krishna Chaitanya
                 </span>
               </h1>

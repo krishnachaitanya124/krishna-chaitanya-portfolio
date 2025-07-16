@@ -11,25 +11,25 @@ export const Hero = () => {
       <div className="absolute top-20 left-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8 text-center lg:text-left">
-            <div className="space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
-                <span className="block">Hi, I'm</span>
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Krishna Chaitanya
-                </span>
-              </h1>
-              <h2 className="text-xl md:text-2xl text-foreground/80 font-semibold">
-                Full Stack Developer & UI/UX Designer
-              </h2>
-              <p className="text-lg text-foreground/70 max-w-xl leading-relaxed">
-                Passionate about creating innovative web solutions with strong technical expertise 
-                in modern technologies and a keen eye for user experience design.
-              </p>
-            </div>
+        <div className="container mx-auto px-6 sm:px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Content */}
+            <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
+              <div className="space-y-4 lg:space-y-6">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground px-2">
+                  <span className="block mb-2">Hi, I'm</span>
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent block">
+                    Krishna Chaitanya
+                  </span>
+                </h1>
+                <h2 className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-semibold px-2">
+                  Full Stack Developer & UI/UX Designer
+                </h2>
+                <p className="text-base sm:text-lg text-foreground/70 max-w-xl leading-relaxed mx-auto lg:mx-0 px-2">
+                  Passionate about creating innovative web solutions with strong technical expertise 
+                  in modern technologies and a keen eye for user experience design.
+                </p>
+              </div>
             
             {/* Contact buttons */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">

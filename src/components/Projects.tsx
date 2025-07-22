@@ -1,10 +1,13 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, ExternalLink, Github, Briefcase } from "lucide-react";
+import { Calendar, ExternalLink, Github, Briefcase, Sparkles, Zap, Shield } from "lucide-react";
+import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 
 export const Projects = () => {
+  const { ref: projectsRef, isVisible } = useScrollReveal({ threshold: 0.2 });
+  const { ref: cardsRef, visibleItems: cardsVisible } = useStaggeredReveal(3, 200);
+
   const projects = [
     {
       title: "AYUSH Startup Registration Portal",
@@ -14,6 +17,8 @@ export const Projects = () => {
       category: "Web Development",
       status: "Completed",
       github: "https://github.com/krishnachaitanya124/Ayush_Startups",
+      icon: Briefcase,
+      gradient: "from-blue-500 to-cyan-500",
       features: [
         "User-friendly interface with digital forms",
         "Document upload functionality", 
@@ -29,6 +34,8 @@ export const Projects = () => {
       category: "Healthcare App",
       status: "Completed",
       github: "https://github.com/krishnachaitanya124/Medicine-Remainder-and-Tracker",
+      icon: Sparkles,
+      gradient: "from-green-500 to-emerald-500",
       features: [
         "Medication schedule management",
         "Dosage and time tracking",
@@ -44,6 +51,8 @@ export const Projects = () => {
       category: "Security System",
       status: "Completed",
       github: "https://github.com/krishnachaitanya124/Gatepass_Frontend",
+      icon: Shield,
+      gradient: "from-purple-500 to-pink-500",
       features: [
         "Biometric fingerprint authentication",
         "Real-time pass issuance",
@@ -56,24 +65,30 @@ export const Projects = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Completed":
-        return "bg-accent text-accent-foreground";
+        return "bg-accent text-accent-foreground shadow-lg";
       case "In Progress":
-        return "bg-primary text-primary-foreground";
+        return "bg-primary text-primary-foreground shadow-lg";
       default:
         return "bg-secondary text-secondary-foreground";
     }
   };
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">
+    <section ref={projectsRef} id="projects" className="py-20 bg-gradient-to-br from-background via-muted/10 to-background relative overflow-hidden">
+      {/* Dynamic background elements */}
+      <div className="absolute top-40 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-40 left-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-20 left-1/2 w-64 h-64 bg-secondary/5 rounded-full blur-2xl animate-float" style={{animationDelay: '1.5s'}}></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
+          <Badge variant="secondary" className="mb-4 glass-effect">
+            <Zap className="w-4 h-4 mr-2" />
             Projects
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Featured{" "}
-            <span className="text-primary">
+            <span className="gradient-hero bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
@@ -83,25 +98,33 @@ export const Projects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-elegant transition-smooth hover:-translate-y-2 border-border/50 h-full"
+              className={`group hover:shadow-intense transition-all duration-500 hover:-translate-y-3 border-border/50 h-full glass-effect overflow-hidden relative ${
+                cardsVisible[index] ? 'animate-slide-up' : 'opacity-0 translate-y-20'
+              }`}
+              style={{
+                animationDelay: `${index * 200}ms`
+              }}
             >
-              <CardContent className="p-6 h-full flex flex-col">
-                {/* Project Header */}
+              {/* Project gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-500`}></div>
+              
+              <CardContent className="p-6 h-full flex flex-col relative">
+                {/* Enhanced Project Header */}
                 <div className="space-y-3 mb-4">
                   <div className="flex items-start justify-between gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-lg group-hover:scale-110 transition-smooth">
-                      <Briefcase className="h-5 w-5 text-primary" />
+                    <div className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br ${project.gradient} rounded-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+                      <project.icon className="h-6 w-6 text-white" />
                     </div>
-                    <Badge className={`text-xs ${getStatusColor(project.status)}`}>
+                    <Badge className={`text-xs ${getStatusColor(project.status)} animate-pulse`}>
                       {project.status}
                     </Badge>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-card-foreground group-hover:text-primary transition-smooth">
+                  <h3 className="text-xl font-bold text-card-foreground group-hover:text-primary transition-all duration-300">
                     {project.title}
                   </h3>
                   
@@ -110,52 +133,59 @@ export const Projects = () => {
                       <Calendar className="h-4 w-4" />
                       {project.date}
                     </div>
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className="text-xs glass-effect">
                       {project.category}
                     </Badge>
                   </div>
                 </div>
 
-                {/* Project Description */}
-                <p className="text-muted-foreground mb-4 flex-grow">
+                {/* Enhanced Project Description */}
+                <p className="text-muted-foreground mb-4 flex-grow group-hover:text-foreground transition-colors duration-300">
                   {project.description}
                 </p>
 
-                {/* Key Features */}
+                {/* Enhanced Key Features */}
                 <div className="space-y-3 mb-4">
-                  <h4 className="font-semibold text-sm text-card-foreground">Key Features:</h4>
+                  <h4 className="font-semibold text-sm text-card-foreground flex items-center gap-2">
+                    <Sparkles className="h-4 w-4" />
+                    Key Features:
+                  </h4>
                   <ul className="space-y-1">
                     {project.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:animate-pulse"></div>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Technologies */}
+                {/* Enhanced Technologies */}
                 <div className="space-y-3 mb-6">
                   <h4 className="font-semibold text-sm text-card-foreground">Technologies:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs">
+                      <Badge 
+                        key={i} 
+                        variant="secondary" 
+                        className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors duration-300 cursor-default"
+                      >
                         {tech}
                       </Badge>
                     ))}
                   </div>
                 </div>
 
-                {/* Action Buttons */}
+                {/* Enhanced Action Buttons */}
                 <div className="flex gap-2 mt-auto">
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="flex-1 transition-smooth hover:scale-105"
+                    className="flex-1 glass-effect hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 hover:-translate-y-1 group/btn"
                     asChild
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
+                      <Github className="mr-2 h-4 w-4 group-hover/btn:animate-bounce" />
                       View Code
                     </a>
                   </Button>
@@ -165,16 +195,16 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View All Projects Button with GitHub Link */}
-        <div className="text-center mt-12">
+        {/* Enhanced View All Projects Button */}
+        <div className={`text-center mt-12 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <Button 
             variant="outline" 
             size="lg"
-            className="transition-smooth hover:scale-105"
+            className="gradient-primary text-primary-foreground border-none shadow-intense hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 group"
             asChild
           >
             <a href="https://github.com/krishnachaitanya124" target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2 h-5 w-5" />
+              <ExternalLink className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               View All Projects on GitHub
             </a>
           </Button>

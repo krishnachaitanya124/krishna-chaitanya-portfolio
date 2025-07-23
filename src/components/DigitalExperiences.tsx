@@ -93,7 +93,7 @@ export const DigitalExperiences = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Crafting Solutions That{" "}
-            <span className="gradient-hero bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyber-blue via-electric-purple to-neon-green bg-clip-text text-transparent">
               Transform Lives
             </span>
           </h2>
@@ -240,7 +240,7 @@ export const DigitalExperiences = () => {
             className="group bg-gradient-to-r from-cyber-blue via-electric-purple to-neon-green hover:from-neon-green hover:via-cyber-blue hover:to-electric-purple text-white border-none shadow-neon hover:shadow-glow transition-all duration-500 hover:scale-105 px-8 py-3"
             asChild
           >
-            <a href="https://github.com/krishnachaitanya124" target="_blank" rel="noopener noreferrer">
+            <a href="#" onClick={() => document.getElementById('digital-hero')?.scrollIntoView({ behavior: 'smooth' })}>
               <ExternalLink className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               Explore Full Portfolio
             </a>

@@ -9,7 +9,7 @@ export const DigitalHero = () => {
   const [typedText, setTypedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   
-  const roles = ["Full Stack Developer", "Digital Architect", "Code Craftsman", "Tech Innovator"];
+  const roles = ["Full Stack Developer", "UI/UX Designer"];
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -144,8 +144,8 @@ export const DigitalHero = () => {
           <div className="flex justify-center gap-6 mb-12">
             {[
               { icon: Github, href: "https://github.com/krishnachaitanya124", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com/in/krishnachaitanya", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:krishnachaitanya124@gmail.com", label: "Email" }
+              { icon: Linkedin, href: "https://linkedin.com/in/uppada-krishna-chaitanya-842517271", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:chaitanyauppada1245@gmail.com", label: "Email" }
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

@@ -66,7 +66,7 @@ export const TechStack = () => {
             Technology Arsenal
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="gradient-hero bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyber-blue via-electric-purple to-neon-green bg-clip-text text-transparent">
               Mastering Modern Tech Stack
             </span>
           </h2>

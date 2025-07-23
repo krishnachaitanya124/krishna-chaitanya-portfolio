@@ -37,7 +37,7 @@ export const InteractiveContact = () => {
 
     // Simulate form submission
     setTimeout(() => {
-      const mailtoLink = `mailto:krishnachaitanya124@gmail.com?subject=${encodeURIComponent(
+      const mailtoLink = `mailto:chaitanyauppada1245@gmail.com?subject=${encodeURIComponent(
         formData.subject || "Portfolio Contact"
       )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -66,8 +66,8 @@ export const InteractiveContact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "krishnachaitanya124@gmail.com",
-      href: "mailto:krishnachaitanya124@gmail.com",
+      value: "chaitanyauppada1245@gmail.com",
+      href: "mailto:chaitanyauppada1245@gmail.com",
       gradient: "from-cyber-blue to-electric-purple"
     },
     {
@@ -81,7 +81,7 @@ export const InteractiveContact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Connect on LinkedIn",
-      href: "https://linkedin.com/in/krishnachaitanya",
+      href: "https://linkedin.com/in/uppada-krishna-chaitanya-842517271",
       gradient: "from-neon-green to-digital-orange"
     },
     {
@@ -109,7 +109,7 @@ export const InteractiveContact = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Build Something{" "}
-            <span className="gradient-hero bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyber-blue via-electric-purple to-neon-green bg-clip-text text-transparent">
               Amazing Together?
             </span>
           </h2>

@@ -74,7 +74,7 @@ export const About = () => {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Passionate about creating{" "}
-            <span className="gradient-hero bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyber-blue via-electric-purple to-neon-green bg-clip-text text-transparent">
               digital experiences
             </span>
           </h2>

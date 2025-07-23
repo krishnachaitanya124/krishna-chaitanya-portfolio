@@ -131,7 +131,7 @@ export const Hero = () => {
               <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-card hover:shadow-intense transition-all duration-500 hover:scale-105 group-hover:border-primary/40">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-accent/10 opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
                 <img 
-                  src="/lovable-uploads/491572e3-dafb-4dfb-b81e-1ba24c148a06.png" 
+                  src="/lovable-uploads/8287fc86-edc7-4a6a-884f-0403d3339367.png" 
                   alt="Krishna Chaitanya Uppada"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

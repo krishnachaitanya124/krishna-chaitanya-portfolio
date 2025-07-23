@@ -110,7 +110,7 @@ export const About = () => {
 
         {/* Enhanced Key Achievements Section */}
         <div className={`mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h3 className="text-2xl font-bold text-center mb-8 gradient-primary bg-clip-text text-transparent">Key Achievements</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Key Achievements</h3>
           <div ref={achievementsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {achievements.map((achievement, index) => (
               <Card 

@@ -92,7 +92,11 @@ export const Experience = () => {
 
                     {/* Achievements */}
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-card-foreground">Key Achievements:</h4>
+                      <h4 className="font-semibold text-card-foreground">
+                        <span className="bg-gradient-to-r from-cyber-blue via-electric-purple to-neon-green bg-clip-text text-transparent">
+                          Key Achievements:
+                        </span>
+                      </h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start gap-2 text-muted-foreground">
@@ -124,7 +128,7 @@ export const Experience = () => {
                           className="transition-smooth hover:scale-105"
                           asChild
                         >
-                          <a href="https://drive.google.com/file/d/1fkYSLbmOKXDG8r-Cl7DUVVqWvICc5SX3/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                          <a href="https://drive.google.com/file/d/1MiWrEAxi19BK7eN10RZc7PtdiG_b7hq1/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="mr-2 h-4 w-4" />
                             View Certificate
                           </a>

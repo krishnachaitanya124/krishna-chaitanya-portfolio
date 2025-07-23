@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown, Code2, Sparkles, Zap, Terminal, Github, Linkedin, Mail } from "lucide-react";
+import { ChevronDown, Code2, Sparkles, Zap, Terminal, Github, Linkedin, Mail, FileText } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const DigitalHero = () => {
@@ -145,7 +145,8 @@ export const DigitalHero = () => {
             {[
               { icon: Github, href: "https://github.com/krishnachaitanya124", label: "GitHub" },
               { icon: Linkedin, href: "https://linkedin.com/in/uppada-krishna-chaitanya-842517271", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:chaitanyauppada1245@gmail.com", label: "Email" }
+              { icon: Mail, href: "mailto:chaitanyauppada1245@gmail.com", label: "Email" },
+              { icon: FileText, href: "https://drive.google.com/file/d/1N5S5CcqZ7HZNVKeeXeX6eYUJgoWq8IYb/view?usp=sharing", label: "Resume" }
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

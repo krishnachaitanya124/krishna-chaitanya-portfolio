@@ -92,10 +92,8 @@ export const Experience = () => {
 
                     {/* Achievements */}
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-card-foreground">
-                        <span className="bg-gradient-to-r from-cyber-blue via-electric-purple to-neon-green bg-clip-text text-transparent">
-                          Key Achievements:
-                        </span>
+                      <h4 className="font-semibold text-foreground">
+                        Key Achievements:
                       </h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (

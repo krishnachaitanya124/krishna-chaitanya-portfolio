@@ -196,7 +196,7 @@ export const Contact = () => {
                         id="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="Your name"
+                        placeholder="John Doe"
                         className="transition-smooth focus:ring-2 focus:ring-primary/20"
                         required
                       />
@@ -210,7 +210,7 @@ export const Contact = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="your.email@example.com"
+                        placeholder="john@example.com"
                         className="transition-smooth focus:ring-2 focus:ring-primary/20"
                         required
                       />

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { WelcomePage } from "@/components/WelcomePage";
 import { Navigation } from "@/components/Navigation";
@@ -6,7 +7,7 @@ import { About } from "@/components/About";
 import { Education } from "@/components/Education";
 import { Experience } from "@/components/Experience";
 import { TechStack } from "@/components/TechStack";
-import { DigitalExperiences } from "@/components/DigitalExperiences";
+import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { InteractiveContact } from "@/components/InteractiveContact";
 
@@ -25,8 +26,8 @@ const Index = () => {
       <Education />
       <Experience />
       <TechStack />
+      <Skills />
       <Projects />
-      <DigitalExperiences />
       <InteractiveContact />
     </div>
   );

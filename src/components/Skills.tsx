@@ -123,7 +123,6 @@ export const Skills = () => {
                     <div key={i} className="space-y-2">
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
                       </div>
                       <Progress value={skill.level} className="h-2" />
                     </div>

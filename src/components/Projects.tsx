@@ -34,6 +34,7 @@ export const Projects = () => {
       category: "Healthcare App",
       status: "Completed",
       github: "https://github.com/krishnachaitanya124/Medicine-Remainder-and-Tracker",
+      liveDemo: "https://med-frontend1.onrender.com/",
       icon: Sparkles,
       gradient: "from-green-500 to-emerald-500",
       features: [
@@ -51,6 +52,7 @@ export const Projects = () => {
       category: "Security System",
       status: "Completed",
       github: "https://github.com/krishnachaitanya124/Gatepass_Frontend",
+      liveDemo: "http://82.29.162.24/",
       icon: Shield,
       gradient: "from-purple-500 to-pink-500",
       features: [
@@ -189,6 +191,19 @@ export const Projects = () => {
                       View Code
                     </a>
                   </Button>
+                  {project.liveDemo && (
+                    <Button 
+                      variant="default" 
+                      size="sm" 
+                      className="flex-1 glass-effect transition-all duration-300 hover:scale-105 hover:-translate-y-1 group/btn"
+                      asChild
+                    >
+                      <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:animate-bounce" />
+                        Live Demo
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>

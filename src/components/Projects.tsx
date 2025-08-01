@@ -193,9 +193,9 @@ export const Projects = () => {
                   </Button>
                   {project.liveDemo && (
                     <Button 
-                      variant="default" 
+                      variant="outline" 
                       size="sm" 
-                      className="flex-1 glass-effect transition-all duration-300 hover:scale-105 hover:-translate-y-1 group/btn"
+                      className="flex-1 glass-effect hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-105 hover:-translate-y-1 group/btn border-primary text-primary hover:border-accent"
                       asChild
                     >
                       <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
